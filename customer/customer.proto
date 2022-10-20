@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package store;
+
+service Userservice {
+ rpc CreateCustomer (CustomerRequest) returns (CustomerResponse);
+}
+
+message CustomerResponse {
+  int64 Id= 1;
+  string FirstName= 2;
+  string LastName= 3;
+  string Bio=4;
+  repeated Address Adderesses =5;
+  string Email=6;
+  string PhoneNumber= 7;
+}
+
+message Address {
+  string District = 1;
+  string Street = 2;
+}
+
+message CustomerRequest {
+  string firstname= 1;
+  string lastname= 2;
+  string bio=3;
+  repeated Address adderesses =4;
+  string email=5;
+  string phonenumber= 6;
+}
