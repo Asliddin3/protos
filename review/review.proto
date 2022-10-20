@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package store;
+
+service ReviewService {
+ rpc CreateReview (Review) returns (Review);
+ rpc GetReview (PostId) returns (PostReview);
+}
+
+message PostReview {
+  float review=1;
+  int64 count= 2;
+}
+message PostId {
+  int64 Id= 1;
+}
+
+message Review {
+  int64 post_id= 1;
+  int64 customer_id= 2;
+  string description=3;
+  int64 review =4;
+}
