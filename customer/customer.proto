@@ -2,10 +2,47 @@ syntax = "proto3";
 
 package store;
 
-service Userservice {
+service CustomerService {
  rpc CreateCustomer (CustomerRequest) returns (CustomerResponse);
  rpc GetById (CustomerId) returns (CustomerResponsePost);
+ rpc GetListCustomers (Empty) returns (ListCustomers);
+ rpc DeleteCustomer (CustomerId) returns (Empty);
+ rpc UpdateCustomer (CustomerResponse) returns (CustomerResponse);
 }
+message ListCustomers {
+  repeated CustomerFullInfo customers= 1;
+}
+message CustomerFullInfo {
+  int64 Id= 1;
+  string FirstName= 2;
+  string LastName= 3;
+  string Bio=4;
+  repeated AddressResponse Adderesses =5;
+  repeated ReviewResp review = 6;
+  string Email=7;
+  string PhoneNumber= 8;
+  string CreatedAt = 9;
+  string UpdatedAt=  10;
+  repeated PostResponse posts=11;
+}
+
+message PostResponse {
+  int64 Id = 1;
+  string Name= 2;
+  string Description= 3;
+  repeated MediasResponse Media= 4;
+  string CreatedAt=5;
+  string UpdatedAt= 6;
+  string DeleteAt= 7;
+}
+
+message ReviewResp {
+  int64 post_id= 1;
+  string description=2;
+  int64 review =3;
+}
+
+message Empty {}
 message CustomerId {
   int64 id= 1;
 }
@@ -22,14 +59,7 @@ message  CustomerResponsePost {
   string UpdatedAt= 9;
   repeated PostResponse Post=10;
 }
-message PostResponse {
-  int64 Id = 1;
-  string Name= 2;
-  string Description= 3;
-  repeated MediasResponse Media= 4;
-  string CreatedAt=5;
-  string UpdatedAt= 6;
-}
+
 message MediasResponse {
   int64 PostId= 1;
   string Name=2;
