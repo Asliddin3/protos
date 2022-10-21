@@ -1,12 +1,20 @@
 syntax = "proto3";
 
-package store;
+package post;
 
 service PostService {
   rpc CreatePost (PostRequest) returns (PostResponse);
   rpc GetPost (PostId) returns (PostResponse);
+  rpc GetPostCustomerId (CustomerId) returns (ListPostCustomer);
   rpc DeletePost (PostId) returns (Empty);
   rpc UpdatePost (PostResponse) returns(PostResponse);
+}
+message ListPostCustomer {
+  repeated PostResponse posts=1;
+}
+
+message CustomerId {
+  int64 Id = 1;
 }
 message Empty {}
 message PostId {
