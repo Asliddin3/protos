@@ -15,6 +15,7 @@ message PostId {
 
 
 message PostRequest {
+  int64 CustomerId=1;
   string Name= 2;
   string Description= 3;
   repeated MediasRequest Media= 4;
@@ -28,12 +29,13 @@ message MediasRequest {
 }
 message PostResponse {
   int64 Id = 1;
-  string Name= 2;
-  string Description= 3;
-  repeated MediasResponse Media= 4;
-  string CreatedAt=5;
-  string UpdatedAt= 6;
-  string DeleteAt= 7;
+  int64 CustomerId=2;
+  string Name= 3;
+  string Description= 4;
+  repeated MediasResponse Media= 5;
+  string CreatedAt=6;
+  string UpdatedAt= 7;
+  string DeleteAt= 8;
 }
 message MediasResponse {
   int64 PostId= 1;
