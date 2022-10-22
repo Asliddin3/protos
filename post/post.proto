@@ -10,7 +10,7 @@ service PostService {
   rpc UpdatePost (PostResponse) returns(PostResponse);
 }
 message ListPostCustomer {
-  repeated PostResponse posts=1;
+  repeated PostReviewResponse posts=1;
 }
 
 message CustomerId {
@@ -44,6 +44,20 @@ message PostResponse {
   string CreatedAt=6;
   string UpdatedAt= 7;
   string DeleteAt= 8;
+}
+
+
+message  PostReviewResponse{
+  int64 Id = 1;
+  int64 CustomerId=2;
+  string Name= 3;
+  string Description= 4;
+  repeated MediasResponse Media= 5;
+  string CreatedAt=6;
+  string UpdatedAt= 7;
+  string DeleteAt= 8;
+  float review=9;
+  int64 count= 10;
 }
 message MediasResponse {
   int64 PostId= 1;
