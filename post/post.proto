@@ -2,12 +2,42 @@ syntax = "proto3";
 
 package post;
 
+
 service PostService {
   rpc CreatePost (PostRequest) returns (PostResponse);
-  rpc GetPost (PostId) returns (PostResponse);
+  rpc GetPost (PostId) returns (PostResponseCustomer);
   rpc GetPostCustomerId (CustomerId) returns (ListPostCustomer);
   rpc DeletePost (PostId) returns (Empty);
   rpc UpdatePost (PostResponse) returns(PostResponse);
+  rpc GetListPosts (Empty) returns (ListAllPostResponse);
+}
+message PostResponseCustomer {
+  int64 Id = 1;
+  int64 CustomerId= 2;
+  string Name= 3;
+  string Description= 4;
+  repeated MediasResponse Media= 5;
+  string CreatedAt=6;
+  string UpdatedAt= 7;
+  string DeleteAt= 8;
+  string firstname= 9;
+  string lastname= 10;
+  string bio=11;
+  repeated AddressResponse adderesses =12;
+  string email=13;
+  string phonenumber= 14;
+}
+message AddressResponse {
+  int64 id=1;
+  string District = 2;
+  string Street = 3;
+}
+
+
+
+message ListAllPostResponse {
+  repeated PostReviewResponse ActivePost= 1;
+  repeated PostReviewResponse DeletedPost= 2;
 }
 message ListPostCustomer {
   repeated PostReviewResponse posts=1;
