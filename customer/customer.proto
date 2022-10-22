@@ -10,7 +10,8 @@ service CustomerService {
  rpc UpdateCustomer (CustomerResponse) returns (CustomerResponse);
 }
 message ListCustomers {
-  repeated CustomerFullInfo customers= 1;
+  repeated CustomerFullInfo ActiveCustomers= 1;
+  repeated CustomerFullInfo DeletedCustomers = 2;
 }
 message CustomerFullInfo {
   int64 Id= 1;
@@ -23,7 +24,8 @@ message CustomerFullInfo {
   string PhoneNumber= 8;
   string CreatedAt = 9;
   string UpdatedAt=  10;
-  repeated PostResponse posts=11;
+  string DeletedAt=11;
+  repeated PostResponse posts=12;
 }
 
 message PostResponse {
@@ -58,6 +60,7 @@ message  CustomerResponsePost {
   string CreatedAt = 8;
   string UpdatedAt= 9;
   repeated PostResponse Post=10;
+  string DeleteAt= 11;
 }
 
 message MediasResponse {
@@ -77,6 +80,7 @@ message CustomerResponse {
   string PhoneNumber= 7;
   string CreatedAt = 8;
   string UpdatedAt= 9;
+  string DeletedAt= 10;
 }
 
 message Address {
