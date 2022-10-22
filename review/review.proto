@@ -5,7 +5,9 @@ package review;
 service ReviewService {
  rpc CreateReview (Review) returns (Review);
  rpc GetPostReview (PostId) returns (PostReview);
+ rpc DeleteReview (PostId) returns (Empty);
 }
+message Empty {}
 
 message PostReview {
   float review=1;
