@@ -4,7 +4,7 @@ package review;
 
 service ReviewService {
  rpc CreateReview (Review) returns (Review);
- rpc GetReview (PostId) returns (PostReview);
+ rpc GetPostReview (PostId) returns (PostReview);
 }
 
 message PostReview {
