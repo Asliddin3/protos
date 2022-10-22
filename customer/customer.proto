@@ -8,6 +8,7 @@ service CustomerService {
  rpc GetListCustomers (Empty) returns (ListCustomers);
  rpc DeleteCustomer (CustomerId) returns (Empty);
  rpc UpdateCustomer (CustomerResponse) returns (CustomerResponse);
+ rpc GetCustomerInfo (CustomerId) returns (CustomerResponse);
 }
 message ListCustomers {
   repeated CustomerFullInfo ActiveCustomers= 1;
