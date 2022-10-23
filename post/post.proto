@@ -10,7 +10,7 @@ service PostService {
   rpc DeletePost (PostId) returns (Empty);
   rpc UpdatePost (PostResponse) returns(PostResponse);
   rpc GetListPosts (Empty) returns (ListAllPostResponse);
-  rpc DeletePostByCostomerId (CustomerId) returns (Empty);
+  rpc DeletePostByCustomerId (CustomerId) returns (Empty);
 }
 message PostResponseCustomer {
   int64 Id = 1;
