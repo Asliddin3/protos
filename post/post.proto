@@ -10,8 +10,15 @@ service PostService {
   rpc DeletePost (PostId) returns (Empty);
   rpc UpdatePost (PostResponse) returns(PostResponse);
   rpc GetListPosts (Empty) returns (ListAllPostResponse);
-  rpc DeletePostByCustomerId (CustomerId) returns (Empty);
+  rpc DeletePostByCustomerId (CustomerId) returns (DeletedReview);
 }
+message DeletedReview {
+  repeated ReviewsIds ReviewsIds=1;
+}
+message ReviewsIds {
+  int64 Id= 1;
+}
+
 message PostResponseCustomer {
   int64 Id = 1;
   int64 CustomerId= 2;
