@@ -99,10 +99,10 @@ message AddressResponse {
 
 
 message CustomerRequest {
-  string firstname= 1;
-  string lastname= 2;
-  string bio=3;
-  repeated Address adderesses =4;
-  string email=5;
-  string phonenumber= 6;
+  string FirstName= 1;
+  string LastName= 2;
+  string Bio=3;
+  repeated Address Adderesses =4;
+  string Email=5;
+  string PhoneNumber= 6;
 }
