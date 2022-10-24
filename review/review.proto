@@ -7,7 +7,12 @@ service ReviewService {
  rpc GetPostOverall (PostId) returns (PostReview);
  rpc DeleteReview (PostId) returns (Empty);
  rpc GetPostReviews (PostId) returns (ReviewsList);
+ rpc GetReviewById (ReviewId) returns (Review);
 }
+message ReviewId {
+  int64 id = 1;
+}
+
 message ReviewsList {
   repeated ReviewRespList reviews = 1;
 }
