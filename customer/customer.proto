@@ -44,7 +44,7 @@ message PostResponse {
 }
 
 message ReviewResp {
-  int64 post_id= 1;
+  int64 id= 1;
   string description=2;
   int64 review =3;
 }
@@ -68,7 +68,7 @@ message  CustomerResponsePost {
 }
 
 message MediasResponse {
-  int64 PostId= 1;
+  int64 Id= 1;
   string Name=2;
   string Link=3;
   string Type= 4;
