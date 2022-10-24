@@ -84,7 +84,6 @@ message CustomerResponse {
   string PhoneNumber= 7;
   string CreatedAt = 8;
   string UpdatedAt= 9;
-  string DeletedAt= 10;
 }
 
 message Address {
