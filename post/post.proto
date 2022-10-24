@@ -100,8 +100,7 @@ message  PostReviewResponse{
 }
 message MediasResponse {
   int64 id =1;
-  int64 PostId= 2;
-  string Name=3;
-  string Link=4;
-  string Type= 5;
+  string Name=2;
+  string Link=3;
+  string Type= 4;
 }
