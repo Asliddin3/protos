@@ -4,7 +4,7 @@ package review;
 
 service ReviewService {
  rpc CreateReview (ReviewRequest) returns (Review);
- rpc GetPostReview (PostId) returns (PostReview);
+ rpc GetPostOverall (PostId) returns (PostReview);
  rpc DeleteReview (PostId) returns (Empty);
  rpc GetPostReviews (PostId) returns (ReviewsList);
 }
