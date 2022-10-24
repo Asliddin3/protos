@@ -18,6 +18,12 @@ message DeletedReview {
 message ReviewsIds {
   int64 Id= 1;
 }
+message ReviewRespList {
+  int64 id =1;
+  int64 customer_id= 2;
+  string description=3;
+  float review =4;
+}
 
 message PostResponseCustomer {
   int64 Id = 1;
@@ -27,21 +33,19 @@ message PostResponseCustomer {
   repeated MediasResponse Media= 5;
   string CreatedAt=6;
   string UpdatedAt= 7;
-  string DeleteAt= 8;
-  string firstname= 9;
-  string lastname= 10;
-  string bio=11;
-  repeated AddressResponse adderesses =12;
-  string email=13;
-  string phonenumber= 14;
+  string firstname= 8;
+  string lastname= 9;
+  string bio=10;
+  repeated AddressResponse adderesses =11;
+  string email=12;
+  string phonenumber= 13;
+  repeated ReviewRespList reviews= 14;
 }
 message AddressResponse {
   int64 id=1;
   string District = 2;
   string Street = 3;
 }
-
-
 
 message ListAllPostResponse {
   repeated PostReviewResponse ActivePost= 1;
@@ -65,8 +69,6 @@ message PostRequest {
   string Name= 2;
   string Description= 3;
   repeated MediasRequest Media= 4;
-  string CreatedAt=5;
-  string UpdatedAt= 6;
 }
 message MediasRequest {
   string Name=2;
@@ -81,9 +83,7 @@ message PostResponse {
   repeated MediasResponse Media= 5;
   string CreatedAt=6;
   string UpdatedAt= 7;
-  string DeleteAt= 8;
 }
-
 
 message  PostReviewResponse{
   int64 Id = 1;
@@ -93,13 +93,15 @@ message  PostReviewResponse{
   repeated MediasResponse Media= 5;
   string CreatedAt=6;
   string UpdatedAt= 7;
-  string DeleteAt= 8;
-  float Review=9;
+  string DeletedAt=8;
+  float Overall=9;
   int64 Count= 10;
+  repeated ReviewRespList reviews = 11;
 }
 message MediasResponse {
-  int64 PostId= 1;
-  string Name=2;
-  string Link=3;
-  string Type= 4;
+  int64 id =1;
+  int64 PostId= 2;
+  string Name=3;
+  string Link=4;
+  string Type= 5;
 }

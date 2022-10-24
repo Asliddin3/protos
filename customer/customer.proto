@@ -25,9 +25,15 @@ message CustomerFullInfo {
   string CreatedAt = 8;
   string UpdatedAt=  9;
   string DeletedAt=10;
-  repeated PostResponse posts=11;
+  repeated PostResponse Posts=11;
+  repeated ReviewList Reviews =12;
 }
-
+message ReviewList {
+  int64 id =1;
+  int64 post_id= 2;
+  string description=3;
+  float review =4;
+}
 message PostResponse {
   int64 Id = 1;
   string Name= 2;
@@ -35,7 +41,6 @@ message PostResponse {
   repeated MediasResponse Media= 4;
   string CreatedAt=5;
   string UpdatedAt= 6;
-  string DeleteAt= 7;
 }
 
 message ReviewResp {
@@ -60,7 +65,6 @@ message  CustomerResponsePost {
   string CreatedAt = 8;
   string UpdatedAt= 9;
   repeated PostResponse Post=10;
-  string DeleteAt= 11;
 }
 
 message MediasResponse {
