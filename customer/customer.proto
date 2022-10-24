@@ -20,13 +20,12 @@ message CustomerFullInfo {
   string LastName= 3;
   string Bio=4;
   repeated AddressResponse Adderesses =5;
-  repeated ReviewResp review = 6;
-  string Email=7;
-  string PhoneNumber= 8;
-  string CreatedAt = 9;
-  string UpdatedAt=  10;
-  string DeletedAt=11;
-  repeated PostResponse posts=12;
+  string Email=6;
+  string PhoneNumber= 7;
+  string CreatedAt = 8;
+  string UpdatedAt=  9;
+  string DeletedAt=10;
+  repeated PostResponse posts=11;
 }
 
 message PostResponse {
