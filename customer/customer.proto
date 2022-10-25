@@ -9,7 +9,17 @@ service CustomerService {
  rpc DeleteCustomer (CustomerId) returns (Empty);
  rpc UpdateCustomer (CustomerUpdate) returns (CustomerResponse);
  rpc GetCustomerInfo (CustomerId) returns (CustomerResponse);
+ rpc CheckField (CheckFieldRequest) returns (CheckFieldResponse);
 }
+message CheckFieldResponse {
+  bool exists=1;
+}
+
+message CheckFieldRequest {
+  string key = 1;
+  string value= 2;
+}
+
 message CustomerUpdate {
   int64 Id= 1;
   string FirstName= 2;
