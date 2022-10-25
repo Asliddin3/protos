@@ -7,9 +7,20 @@ service CustomerService {
  rpc GetById (CustomerId) returns (CustomerResponsePost);
  rpc GetListCustomers (Empty) returns (ListCustomers);
  rpc DeleteCustomer (CustomerId) returns (Empty);
- rpc UpdateCustomer (CustomerResponse) returns (CustomerResponse);
+ rpc UpdateCustomer (CustomerUpdate) returns (CustomerResponse);
  rpc GetCustomerInfo (CustomerId) returns (CustomerResponse);
 }
+message CustomerUpdate {
+  int64 Id= 1;
+  string FirstName= 2;
+  string LastName= 3;
+  string Bio=4;
+  repeated AddressResponse Adderesses =5;
+  string Email=6;
+  string PhoneNumber= 7;
+}
+
+
 message ListCustomers {
   repeated CustomerFullInfo ActiveCustomers= 1;
   repeated CustomerFullInfo DeletedCustomers = 2;
