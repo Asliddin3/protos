@@ -8,7 +8,7 @@ service PostService {
   rpc GetPost (PostId) returns (PostResponseCustomer);
   rpc GetPostCustomerId (CustomerId) returns (ListPostCustomer);
   rpc DeletePost (PostId) returns (Empty);
-  rpc UpdatePost (PostResponse) returns(PostResponse);
+  rpc UpdatePost (PostUpdate) returns(PostResponse);
   rpc GetListPosts (Empty) returns (ListAllPostResponse);
   rpc DeletePostByCustomerId (CustomerId) returns (DeletedReview);
 }
@@ -77,6 +77,14 @@ message MediasRequest {
   string Link=3;
   string Type= 4;
 }
+message PostUpdate {
+  int64 Id = 1;
+  int64 CustomerId=2;
+  string Name= 3;
+  string Description= 4;
+  repeated MediasResponse Media= 5;
+}
+
 message PostResponse {
   int64 Id = 1;
   int64 CustomerId=2;
