@@ -125,4 +125,6 @@ message CustomerRequest {
   repeated Address Adderesses =4;
   string Email=5;
   string PhoneNumber= 6;
+  string UserName = 10;
+  string PassWord= 11;
 }
