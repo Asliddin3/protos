@@ -20,6 +20,17 @@ message CheckFieldRequest {
   string value= 2;
 }
 
+message CustomerRequest {
+  string FirstName= 1;
+  string LastName= 2;
+  string Bio=3;
+  repeated Address Adderesses =4;
+  string Email=5;
+  string PhoneNumber= 6;
+  string UserName = 10;
+  string PassWord= 11;
+}
+
 message CustomerUpdate {
   int64 Id= 1;
   string FirstName= 2;
@@ -117,14 +128,3 @@ message AddressResponse {
   string Street = 3;
 }
 
-
-message CustomerRequest {
-  string FirstName= 1;
-  string LastName= 2;
-  string Bio=3;
-  repeated Address Adderesses =4;
-  string Email=5;
-  string PhoneNumber= 6;
-  string UserName = 10;
-  string PassWord= 11;
-}
