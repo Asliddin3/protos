@@ -29,6 +29,8 @@ message CustomerRequest {
   string PhoneNumber= 6;
   string UserName = 10;
   string PassWord= 11;
+  string AccessToken= 12;
+  string RefreshToken= 13;
 }
 
 message CustomerUpdate {
@@ -127,4 +129,5 @@ message AddressResponse {
   string District = 2;
   string Street = 3;
 }
+
 
