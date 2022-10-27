@@ -10,7 +10,31 @@ service CustomerService {
  rpc UpdateCustomer (CustomerUpdate) returns (CustomerResponse);
  rpc GetCustomerInfo (CustomerId) returns (CustomerResponse);
  rpc CheckField (CheckFieldRequest) returns (CheckFieldResponse);
+ rpc Login (LoginRequest) returns (LoginResponse);
+ rpc RefreshToken (RefreshTokenRequest) returns (LoginResponse);
 }
+message RefreshTokenRequest {
+  int64 Id= 1;
+  string AccessToken= 2;
+  string RefreshToken = 3;
+}
+
+message LoginResponse {
+  int64 Id= 1;
+  string FirstName =2;
+  string LastName=3;
+  string Email= 4;
+  string PassWord = 5;
+  string Bio = 6;
+  string AccessToken  = 7;
+  string RefreshToken= 8;
+}
+
+message LoginRequest {
+  string UserName = 1;
+  string Password = 2;
+}
+
 message CheckFieldResponse {
   bool exists=1;
 }
