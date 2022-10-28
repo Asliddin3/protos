@@ -12,7 +12,31 @@ service PostService {
   rpc GetListPosts (Empty) returns (ListAllPostResponse);
   rpc DeletePostByCustomerId (CustomerId) returns (DeletedReview);
   rpc ListPost (ListPostReq) returns (ListPostResp);
+  rpc SearchOrderedPagePost (SearchRequest) returns (SearchResponse);
 }
+message SearchRequest {
+  int64 Limit =1;
+  int64 Page = 2;
+  repeated KetValue Parametrs = 3;
+  string OrderBy= 4;
+}
+
+message KetValue {
+  string Key = 1;
+  string Value= 2;
+}
+message SearchResponse {
+  repeated PostInfo posts = 1;
+}
+
+message PostInfo {
+  int64 Id = 1;
+  int64 CustomerId=2;
+  string Name= 3;
+  string Description= 4;
+  repeated MediasResponse Media= 5;
+}
+
 message ListPostReq {
   int64 limit= 1;
   int64 page = 2;
