@@ -53,7 +53,7 @@ message ReviewsIds {
 }
 message ReviewRespList {
   int64 id =1;
-  int64 customer_id= 2;
+  string customer_id= 2;
   string description=3;
   float review =4;
   string first_name= 5;
@@ -62,7 +62,7 @@ message ReviewRespList {
 
 message PostResponseCustomer {
   int64 Id = 1;
-  int64 CustomerId= 2;
+  string CustomerId= 2;
   string Name= 3;
   string Description= 4;
   repeated MediasResponse Media= 5;
@@ -91,7 +91,7 @@ message ListPostCustomer {
 }
 
 message CustomerId {
-  int64 Id = 1;
+  string Id = 1;
 }
 message Empty {}
 message PostId {
@@ -100,7 +100,7 @@ message PostId {
 
 
 message PostRequest {
-  int64 CustomerId=1;
+  string CustomerId=1;
   string Name= 2;
   string Description= 3;
   repeated MediasRequest Media= 4;
@@ -112,7 +112,7 @@ message MediasRequest {
 }
 message PostUpdate {
   int64 Id = 1;
-  int64 CustomerId=2;
+  string CustomerId=2;
   string Name= 3;
   string Description= 4;
   repeated MediasResponse Media= 5;
@@ -120,7 +120,7 @@ message PostUpdate {
 
 message PostResponse {
   int64 Id = 1;
-  int64 CustomerId=2;
+  string CustomerId=2;
   string Name= 3;
   string Description= 4;
   repeated MediasResponse Media= 5;
@@ -130,7 +130,7 @@ message PostResponse {
 
 message  PostReviewResponse{
   int64 Id = 1;
-  int64 CustomerId=2;
+  string CustomerId=2;
   string Name= 3;
   string Description= 4;
   repeated MediasResponse Media= 5;

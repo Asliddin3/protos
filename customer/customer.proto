@@ -14,20 +14,18 @@ service CustomerService {
  rpc RefreshToken (RefreshTokenRequest) returns (LoginResponse);
 }
 message RefreshTokenRequest {
-  int64 Id= 1;
-  string AccessToken= 2;
-  string RefreshToken = 3;
+  string Id= 1;
+  string RefreshToken= 2;
 }
 
 message LoginResponse {
-  int64 Id= 1;
+  string Id= 1;
   string FirstName =2;
   string LastName=3;
   string Email= 4;
   string PassWord = 5;
   string Bio = 6;
-  string AccessToken  = 7;
-  string RefreshToken= 8;
+  string RefreshToken= 7;
 }
 
 message LoginRequest {
@@ -53,12 +51,12 @@ message CustomerRequest {
   string PhoneNumber= 6;
   string UserName = 10;
   string PassWord= 11;
-  string AccessToken= 12;
-  string RefreshToken= 13;
+  string RefreshToken= 12;
+  string Id = 13;
 }
 
 message CustomerUpdate {
-  int64 Id= 1;
+  string Id= 1;
   string FirstName= 2;
   string LastName= 3;
   string Bio=4;
@@ -73,7 +71,7 @@ message ListCustomers {
   repeated CustomerFullInfo DeletedCustomers = 2;
 }
 message CustomerFullInfo {
-  int64 Id= 1;
+  string Id= 1;
   string FirstName= 2;
   string LastName= 3;
   string Bio=4;
@@ -109,11 +107,11 @@ message ReviewResp {
 
 message Empty {}
 message CustomerId {
-  int64 id= 1;
+  string id= 1;
 }
 
 message  CustomerResponsePost {
-  int64 Id= 1;
+  string Id= 1;
   string FirstName= 2;
   string LastName= 3;
   string Bio=4;
@@ -133,7 +131,7 @@ message MediasResponse {
 }
 
 message CustomerResponse {
-  int64 Id= 1;
+  string Id= 1;
   string FirstName= 2;
   string LastName= 3;
   string Bio=4;
@@ -153,5 +151,3 @@ message AddressResponse {
   string District = 2;
   string Street = 3;
 }
-
-

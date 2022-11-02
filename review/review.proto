@@ -11,7 +11,7 @@ service ReviewService {
  rpc GetCustomerReviews (CustomerId) returns (CustomerReviewList);
 }
 message CustomerId {
-  int64 id = 1;
+  string id = 1;
 }
 message CustomerReviewList {
   repeated CustomerReivewResp ReviewList =1;
@@ -27,7 +27,7 @@ message  CustomerReivewResp {
 message ReviewResp {
   int64 id =1;
   int64 post_id= 2;
-  int64 customer_id= 3;
+  string customer_id= 3;
   string description=4;
   float review =5;
   string created_at = 6;
@@ -43,14 +43,14 @@ message ReviewsList {
 }
 message ReviewRequest {
   int64 post_id= 1;
-  int64 customer_id= 2;
+  string customer_id= 2;
   string description=3;
   float review =4;
 }
 
 message ReviewRespList {
   int64 id =1;
-  int64 customer_id= 2;
+  string customer_id= 2;
   string description=3;
   float review =4;
   string first_name= 5;
@@ -69,7 +69,7 @@ message PostId {
 message Review {
   int64 id =1;
   int64 post_id= 2;
-  int64 customer_id= 3;
+  string customer_id= 3;
   string description=4;
   float review =5;
 }
