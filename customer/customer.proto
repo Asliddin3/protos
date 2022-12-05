@@ -12,7 +12,47 @@ service CustomerService {
  rpc CheckField (CheckFieldRequest) returns (CheckFieldResponse);
  rpc Login (LoginRequest) returns (LoginResponse);
  rpc RefreshToken (RefreshTokenRequest) returns (LoginResponse);
+ rpc CreateCustomerPost (CustomerPostRequest) returns (CustomerPostResponse);
 }
+message CustomerPostRequest {
+  string FirstName= 1;
+  string LastName= 2;
+  string Bio=3;
+  string PostName= 4;
+  string PostDescription= 5;
+  repeated MediasRequest Media= 6;
+  string UserName= 7;
+}
+message MediasRequest {
+  string Name=1;
+  string Link=2;
+  string Type= 3;
+}
+message MediasResponse {
+  string Name=1;
+  string Link=2;
+  string Type= 3;
+  int64 Id = 4;
+}
+
+message PostRequest {
+  string CustomerId=1;
+  string Name= 2;
+  string Description= 3;
+  repeated MediasRequest Media= 4;
+}
+message CustomerPostResponse {
+  string CustomerId= 1;
+  string FirstName= 2;
+  string LastName= 3;
+  string Bio=4;
+  // string PostName= 5;
+  // string PostDescription= 6;
+  // repeated MediasResponse Media= 7;
+  // int64 PostId= 8;
+}
+
+
 message RefreshTokenRequest {
   string Id= 1;
   string RefreshToken= 2;
@@ -123,12 +163,7 @@ message  CustomerResponsePost {
   repeated PostResponse Post=10;
 }
 
-message MediasResponse {
-  int64 Id= 1;
-  string Name=2;
-  string Link=3;
-  string Type= 4;
-}
+
 
 message CustomerResponse {
   string Id= 1;
