@@ -107,8 +107,8 @@ message CustomerUpdate {
 
 
 message ListCustomers {
-  repeated CustomerFullInfo ActiveCustomers= 1;
-  repeated CustomerFullInfo DeletedCustomers = 2;
+  repeated CustomerFullInfo Customers= 1;
+  // repeated CustomerFullInfo DeletedCustomers = 2;
 }
 message CustomerFullInfo {
   string Id= 1;
