@@ -13,7 +13,20 @@ service PostService {
   rpc DeletePostByCustomerId (CustomerId) returns (DeletedReview);
   rpc ListPost (ListPostReq) returns (ListPostResp);
   rpc SearchOrderedPagePost (SearchRequest) returns (SearchResponse);
+  rpc CreateCustomer (CustomerResponse) returns (CustomerResponse);
 }
+message CustomerResponse {
+  string Id= 1;
+  string FirstName= 2;
+  string LastName= 3;
+  string Bio=4;
+  repeated AddressResponse Adderesses =5;
+  string Email=6;
+  string PhoneNumber= 7;
+  string CreatedAt = 8;
+  string UpdatedAt= 9;
+}
+
 message SearchRequest {
   int64 Limit =1;
   int64 Page = 2;
@@ -31,7 +44,7 @@ message SearchResponse {
 
 message PostInfo {
   int64 Id = 1;
-  int64 CustomerId=2;
+  string CustomerId=2;
   string Name= 3;
   string Description= 4;
   repeated MediasResponse Media= 5;
