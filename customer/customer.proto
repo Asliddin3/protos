@@ -12,7 +12,7 @@ service CustomerService {
  rpc CheckField (CheckFieldRequest) returns (CheckFieldResponse);
  rpc Login (LoginRequest) returns (LoginResponse);
  rpc RefreshToken (RefreshTokenRequest) returns (LoginResponse);
- rpc CreateCustomerPost (CustomerPostRequest) returns (CustomerPostResponse);
+ rpc CreateCustomerPost (CustomerRequest) returns (CustomerResponse);
 }
 message CustomerPostRequest {
   string FirstName= 1;
