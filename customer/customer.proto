@@ -123,6 +123,7 @@ message CustomerFullInfo {
   string DeletedAt=10;
   repeated PostResponse Posts=11;
   repeated ReviewList Reviews =12;
+  string UserName = 13;
 }
 message ReviewList {
   int64 id =1;
